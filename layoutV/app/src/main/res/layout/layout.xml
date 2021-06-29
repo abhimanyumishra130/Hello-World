@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2F2F2F">
+
+    <TextView
+        android:id="@+id/textAnd03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Hello And 03"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Layouts"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_below="@+id/textAnd03"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"/>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/blue_circle" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Name :"
+            android:textColor="#FF0000"
+            android:textSize="27dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Lloyd Dcosta"
+            android:textColor="#FF0000"
+            android:textSize="22dp"
+            android:layout_height="wrap_content"/>
+       <ImageView
+           android:layout_width="wrap_content"
+           android:src="@drawable/ic_name_1"
+           android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Age :"
+            android:textColor="#FF0000"
+            android:textSize="27dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="50"
+            android:textColor="#FF0000"
+            android:textSize="22dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="183dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="200dp"
+        android:background="#C4C4C4"
+        android:layout_height="31dp"/>
+    <View
+        android:layout_width="166dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="200dp"
+        android:background="#C4C4C4"
+        android:layout_height="20dp"/>
+    <View
+        android:layout_width="141dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="200dp"
+        android:background="#C4C4C4"
+        android:layout_height="12dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:gravity="bottom"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:text="Next"
+        android:background="#00FF00"
+        android:layout_height="70dp"/>
+</LinearLayout>
+
+
+</LinearLayout>
