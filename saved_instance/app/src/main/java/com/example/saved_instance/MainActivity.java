@@ -15,13 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTvSavedInstance= findViewById(R.id.mTvInstance);
-        mTvSavedInstance.setText("Hey Masai");
+        mTvSavedInstance.setText("Welcome to masai");
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("data","Screen Rotation");
+        outState.putString("data","Screen Rotated");
     }
 
     @Override
