@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
     public boolean isUsername(){
-        if(mEtUsername.getText().toString().length()>=4){
+        if(mEtUsername.getText().toString().trim().length()>=4){
             return true;
         }else{
             mEtUsername.setError("Invalid Username!");
