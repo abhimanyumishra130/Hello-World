@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+    <Button
+        android:layout_width="139dp"
+        android:text="Nrupul"
+        android:background="#DE1717"
+        android:layout_height="55dp"/>
+        <Button
+            android:layout_width="138dp"
+            android:text="Dev"
+            android:background="#0E0481"
+            android:layout_marginLeft="138dp"
+            android:layout_height="55dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="139dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="Prateek"
+        android:background="#B4A311"
+        android:layout_height="61dp"/>
+
+    <Button
+        android:layout_width="139dp"
+        android:layout_marginTop="100dp"
+        android:text="Aman"
+        android:background="#920495"
+        android:layout_height="61dp"/>
+
+    <Button
+        android:layout_width="139dp"
+        android:layout_marginTop="300dp"
+        android:text="Rahul"
+        android:layout_gravity="end"
+        android:background="#3F0D66"
+        android:layout_height="61dp"/>
+
+
+
+</LinearLayout>
