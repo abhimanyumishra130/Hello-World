@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">week11_day4</string>
+    <string name="name">Name</string>
+    <string name="id">Enter the id</string>
+    <string name="dob">Enter the date of birth</string>
+    <string name="blood_group">Enter the Blood Group</string>
+    <string name="phone_number">Enter the phone number</string>
+    <string name="state">Enter the state</string>
+    <string name="district">Enter the district</string>
+    <string name="address">Enter the Address</string>
+</resources>
