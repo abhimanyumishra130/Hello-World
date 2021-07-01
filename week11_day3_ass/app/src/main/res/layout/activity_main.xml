@@ -16,11 +16,13 @@
         android:textColorHint="@color/black"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:textColor="@color/black"
         android:layout_marginTop="90dp"
         android:layout_height="59dp"/>
     <EditText
         android:id="@+id/mtCC"
         android:background="@drawable/bg"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -33,6 +35,7 @@
         android:background="@drawable/bg"
         android:layout_width="match_parent"
         android:hint="Content"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
