@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:padding="15dp"
+    tools:context=".WelcomePage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_user_credentials"
+        android:layout_alignParentTop="true"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tvwelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Welcome!"
+            android:textColor="#404040"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvwelcome"
+            android:text="Get the best from our app"
+            android:textColor="#404040"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_user_credentials"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#f2f2f2">
+
+
+        <EditText
+            android:id="@+id/etemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/getstarted_bg"
+            android:drawableLeft="@drawable/user_email"
+            android:drawablePadding="20dp"
+            android:hint="Email Address"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColorHint="#a6a6a6"
+            android:textSize="20dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etemail"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/getstarted_bg">
+
+            <EditText
+                android:id="@+id/etpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/getstarted_bg"
+                android:drawableLeft="@drawable/password"
+                android:drawablePadding="20dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textColorHint="#a6a6a6"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/showHideBtn"
+                android:textColor="#a6a6a6"
+                android:background="@color/Transparent"
+                android:layout_gravity="end|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show"/>
+
+        </FrameLayout>
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/etpassword"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/etemail"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:background="@drawable/getstarted_bg"-->
+        <!--            android:drawableLeft="@drawable/password"-->
+        <!--            android:drawablePadding="20dp"-->
+        <!--            android:hint="Password"-->
+        <!--            android:paddingLeft="20dp"-->
+        <!--            android:inputType="textPassword"-->
+        <!--            android:paddingTop="20dp"-->
+        <!--            android:paddingBottom="20dp"-->
+        <!--            android:textColorHint="#a6a6a6"-->
+        <!--            android:textSize="20dp" />-->
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnforgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_user_credentials"
+        android:layout_marginTop="40dp"
+        android:background="@color/Transparent"
+        android:drawableBottom="@drawable/under_line"
+        android:text="Forgot Password?"
+        android:textAllCaps="false"
+        android:textColor="#3b5988"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnforgot"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_bg"
+        android:padding="20dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+
+</RelativeLayout>
+
