@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:src="@drawable/person"
+           android:layout_marginLeft="160dp"
+           android:layout_marginTop="50dp"
+           android:layout_height="wrap_content"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:text="Add New Employee"
+           android:textSize="25sp"
+           android:layout_marginLeft="86dp"
+           android:layout_height="wrap_content"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:background="@drawable/rectangle"
+           android:layout_marginLeft="20dp"
+           android:padding="16dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginTop="30dp"
+           android:layout_height="wrap_content">
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:orientation="vertical"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:text="Title : "
+                  style="@style/customEditText"/>
+               <TextView
+                   style="@style/customEditText"
+                   android:layout_marginTop="27dp"
+                   android:text="First Name :  "/>
+
+               <TextView
+                   style="@style/customEditText"
+                   android:layout_marginTop="27dp"
+                   android:text="Last Name :  " />
+
+               <TextView
+                   style="@style/customEditText"
+                   android:layout_marginTop="27dp"
+                   android:text="Work Email :  "/>
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <EditText
+                   style="@style/customEditText"
+                   android:layout_width="204dp"
+                   android:background="@drawable/rectangle"
+                   android:hint="Select Option" />
+
+               <EditText
+                   style="@style/customEditText"
+                   android:layout_width="204dp"
+                   android:layout_marginTop="30dp"
+                   android:background="@drawable/rectangle"
+                   android:hint="Jonathan" />
+               <EditText
+                   style="@style/customEditText"
+                   android:layout_marginTop="30dp"
+                   android:background="@drawable/rectangle"
+                   android:layout_width="204dp"
+                   android:hint="Doe" />
+
+               <EditText
+                   style="@style/customEditText"
+                   android:layout_marginTop="30dp"
+                   android:layout_width="204dp"
+                   android:background="@drawable/rectangle"
+                   android:hint="Jonathan23@gmail.com" />
+
+           </LinearLayout>
+       </LinearLayout>
+   </LinearLayout>
+
+</ScrollView>
