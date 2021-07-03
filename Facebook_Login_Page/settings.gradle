@@ -1,0 +1,2 @@
+rootProject.name = "Facebook_Login_Page"
+include ':app'

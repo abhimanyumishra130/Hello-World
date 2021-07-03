@@ -1,0 +1,2 @@
+rootProject.name = "intentReciever"
+include ':app'
