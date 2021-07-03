@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Phone Insurance</string>
+    <string name="_2_september_2020">2 September, 2020</string>
+    <string name="pending_activation">Pending Activation</string>
+    <string name="status_expired">Status:Expired</string>
+    <string name="phone_off">phone off</string>
+    <string name="circle">circle</string>
+    <string name="nexus_5_insurance">Nexus 5 Insurance</string>
+    <string name="activate_insurance_now">Activate Insurance now</string>
+    <string name="device">Device</string>
+    <string name="lge_nexus_5">LGE Nexus 5</string>
+    <string name="insurance_term">Insurance term</string>
+    <string name="_12_months">12 months</string>
+    <string name="coverage">Coverage</string>
+    <string name="all_drops_and_breakage_including_cracked_screen">All drops and breakage including cracked screen</string>
+</resources>
