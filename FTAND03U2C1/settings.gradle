@@ -1,0 +1,2 @@
+rootProject.name = "FT-AND-03 U-2 C-1"
+include ':app'
