@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".SecondActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="name : "
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
+            android:text="first name"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="wrap_content"
+            android:text="last name"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="email : "
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:text="email address"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/NoOfSeats"
+        android:layout_width="match_parent"
+        android:hint="enter the number of seats"
+        android:textColorHint="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/DateOfShow"
+        android:layout_width="match_parent"
+        android:hint="enter the date of show"
+        android:textColorHint="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/thirdPage"
+        android:layout_width="wrap_content"
+        android:text="go to third screen"
+        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</LinearLayout>
