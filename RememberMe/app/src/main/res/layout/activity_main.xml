@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3">
+
+    <TextView
+        android:id="@+id/SIGN_IN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="SIGN IN"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:background="@drawable/back_bg"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SIGN_IN"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:text="Welcome back"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#BC1C2B"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Continue to Sign In!"
+            android:textSize="20sp"
+            android:textColor="#BC1C2B"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="name"
+            android:textColor="#A2A2A2"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:hint="Enter the name"
+            android:textColorHint="#A2A2A2"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Password"
+            android:textColor="#A2A2A2"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:hint="Enter Password"
+            android:textColorHint="#A2A2A2"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/btnCheckBox"
+            android:layout_width="wrap_content"
+            android:text="Remember Me"
+            android:textSize="20sp"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="100dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
