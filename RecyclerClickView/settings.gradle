@@ -1,0 +1,2 @@
+rootProject.name = "Recycler ClickView"
+include ':app'
