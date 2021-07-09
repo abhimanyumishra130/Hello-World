@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#313236"
+        android:drawableLeft="@drawable/back"
+        android:drawableRight="@drawable/home"
+        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="    Smoking"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
+
+    <ScrollView
+        android:layout_above="@+id/tvBottom"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/start"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleX="1.11"
+                    android:scaleY="1.12"
+                    android:src="@drawable/image" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/share" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageCard">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="85dp"
+                    android:background="#C80505" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/heading"
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/content"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </ScrollView>
+    <TextView
+        android:id="@+id/tvBottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:background="#313236"
+        android:text="Published at 12:00 pm"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
