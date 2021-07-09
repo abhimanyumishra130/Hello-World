@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="style">
+        <item name="android:width">165dp</item>
+        <item name="android:height">168dp</item>
+    </style>
+</resources>

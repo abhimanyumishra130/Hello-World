@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">kakshaSignUp</string>
+    <string name="use_phone_number">Use phone number</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="continue_with_facebook">Continue with facebook</string>
+    <string name="continue_with_google">Continue with google</string>
 </resources>
