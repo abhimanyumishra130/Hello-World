@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="278dp"
+            android:layout_gravity="top"
+            android:scaleY="1.2"
+            android:src="@drawable/naruto" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="A n i m e"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:padding="30dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="N A R U T O"
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Hero of the story"
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/divider"
+            android:layout_gravity="center"
+            android:padding="30dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/content"
+            android:textSize="20dp"
+            android:padding="25dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="278dp"
+            android:layout_gravity="top"
+            android:scaleY="1.2"
+            android:scaleX="1.3"
+            android:src="@drawable/sasuke" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="A n i m e"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:padding="35dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="S A S U K E"
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Rival of the hero"
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/divider"
+            android:layout_gravity="center"
+            android:padding="30dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/content2"
+            android:textSize="20dp"
+            android:padding="25dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
