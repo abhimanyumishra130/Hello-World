@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Article Scrolling with Recyclerview</string>
+    <string name="contentNaruto">Naruto was serialized in Shueisha magazine, Weekly Shōnen Jump from 1999
+        to 2014, and released in tankōbon (book) form in 72 volumes.A powerful fox known as the Nine-Tails
+        attacks Konoha, the hidden leaf village in the Land of Fire, one of the Five Great Shinobi Countries
+        in the Ninja World. In response, the leader of Konoha and the Fourth Hokage, Minato Namikaze (with his
+        wife Kushina Uzumaki) seals the fox inside the body of his newborn son, Naruto Uzumaki, making Naruto a
+        host of the beast;</string>
+</resources>
