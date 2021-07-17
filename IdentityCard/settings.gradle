@@ -1,0 +1,2 @@
+rootProject.name = "IdentityCard"
+include ':app'
