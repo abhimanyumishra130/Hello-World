@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Date1"
+            android:text="Date : "
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/date"
+            android:text="date"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/Date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:id="@+id/Positive"
+            android:text="Positive : "
+            android:textSize="20sp"
+            android:layout_below="@+id/Date1"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/positive"
+            android:text="positive"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/Positive"
+            android:layout_below="@+id/date"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <TextView
+            android:id="@+id/Negative"
+            android:text="Negative : "
+            android:textSize="20sp"
+            android:layout_below="@+id/Positive"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/negative"
+            android:text="negative"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/Negative"
+            android:layout_below="@+id/positive"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/HospitalizedCurrently"
+            android:text="Hospitalized Currently : "
+            android:layout_below="@+id/Negative"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/hospitalizedCurrently"
+            android:text="hospitalizedCurrently"
+            android:layout_below="@+id/negative"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/HospitalizedCurrently"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/OnVentilatorCurrently"
+            android:text="On Ventilator Currently : "
+            android:textSize="20sp"
+            android:layout_below="@+id/HospitalizedCurrently"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/onVentilatorCurrently"
+            android:text="onVentilatorCurrently"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/OnVentilatorCurrently"
+            android:layout_below="@+id/hospitalizedCurrently"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/Death"
+            android:text="Death : "
+            android:textSize="20sp"
+            android:layout_below="@+id/OnVentilatorCurrently"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/death"
+            android:text="death"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/OnVentilatorCurrently"
+            android:layout_below="@+id/onVentilatorCurrently"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:id="@+id/DateChecked"
+            android:text="Date Checked : "
+            android:textSize="20sp"
+            android:layout_below="@+id/Death"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/dateChecked"
+            android:text="dateChecked"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/DateChecked"
+            android:layout_below="@+id/death"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
