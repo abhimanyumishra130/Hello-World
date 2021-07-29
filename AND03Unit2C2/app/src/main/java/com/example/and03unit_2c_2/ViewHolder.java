@@ -25,12 +25,12 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setData(ResponseModel responsemodel){
-        date.setText(responsemodel.getDate());
-        positive.setText(responsemodel.getPositive());
-        negative.setText(responsemodel.getNegative());
-        hospitalizedCurrently.setText(responsemodel.getHospitalizedCurrently());
-        onVentilatorCurrently.setText(responsemodel.getOnVentilatorCurrently());
-        death.setText(responsemodel.getDeath());
-        dateChecked.setPivotY(responsemodel.getDeath());
+        date.setText(responsemodel.getDate()+"");
+        positive.setText(responsemodel.getPositive()+"");
+        negative.setText(responsemodel.getNegative()+"");
+        hospitalizedCurrently.setText(responsemodel.getHospitalizedCurrently()+"");
+        onVentilatorCurrently.setText(responsemodel.getOnVentilatorCurrently()+"");
+        death.setText(responsemodel.getDeath()+"");
+        dateChecked.setText(responsemodel.getDeath()+"");
     }
 }
