@@ -10,15 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
+    private OnClickListener onClickListener;
     private ArrayList<ContactModel> contactList;
-    public ContactAdapter(ArrayList<ContactModel> contactList){
+    public ContactAdapter(ArrayList<ContactModel> contactList,OnClickListener onClickListener){
         this.contactList= contactList;
+        this.onClickListener=onClickListener;
     }
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact_litem_layout,parent,false);
-        return new ContactViewHolder(view);
+        return new ContactViewHolder(view,onClickListener);
     }
 
     @Override

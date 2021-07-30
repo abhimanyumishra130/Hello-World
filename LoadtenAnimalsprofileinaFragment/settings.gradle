@@ -1,0 +1,2 @@
+rootProject.name = "Load ten Animals profile in a Fragment"
+include ':app'
