@@ -49,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
         initViews();
 
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openGallery();
+            } else {
+                Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     private void initViews() {
         mIvGallery = findViewById(R.id.imageView);
@@ -73,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 uploadImageToApi();
             }
         });
+    }
+    private boolean isPermissionGranted() {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
     }
 
     private void uploadImageToApi(){
@@ -102,9 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private boolean isPermissionGranted() {
-        return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
-    }
+
 
 
     private void openGallery() {
@@ -119,18 +131,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if (result.getData() != null) {
-                        //sending data to api, convert uri to path of image
-//                        Uri selectImageUrl = result.getData().getData();
-//
-//                        try {
-//                            InputStream inputStream = getContentResolver().openInputStream(selectImageUrl);
-//                            mIvGallery.setImageBitmap(BitmapFactory.decodeStream(inputStream));
-//                           getImagePathFromUri(selectImageUrl);
-//                           // getImagePathFromUri(selectImageUrl);
-//                            mIvGallery.setVideoURI(selectImageUrl);
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
                         Uri selectedVideo=result.getData().getData();
                         mIvGallery.setVideoURI(selectedVideo);
                         mIvGallery.setMediaController(new MediaController(MainActivity.this));
@@ -140,14 +140,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
     );
-    /*
-    1. find path of the iamge
-    2. Convert part into flie
-    3. Generate multipart body
-     */
 
 
-    //quering the data base adn where is the path of image
+
     @NotNull
     private Cursor getImagePathFromUri(Uri selectedImage) {
         String[] filePath = {MediaStore.Video.Media.DATA};
@@ -161,16 +156,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    //starting the activity and gettting the reuslt in same activity
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                openGallery();
-            } else {
-                Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+
 }
