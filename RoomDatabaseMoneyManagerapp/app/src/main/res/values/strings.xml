@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RoomDatabase Money Manager app</string>
+    <string-array name="Money">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+</resources>

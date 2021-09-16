@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.androidsqlitemoneymanagerappassignment.AddActivity">
+
+    <Spinner
+        android:id="@+id/SpinnerAdd"
+        android:entries="@array/Money"
+        android:clickable="true"
+        android:prompt="@array/Money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_marginVertical="10dp"
+        android:id="@+id/amountAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="amount" />
+
+    <EditText
+        android:id="@+id/descriptionAdd"
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description" />
+
+    <TextView
+        android:paddingVertical="10dp"
+        android:id="@+id/dateAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B2E8EF"
+        android:text="date 202002"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/submitAdd"
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit" />
+</LinearLayout>

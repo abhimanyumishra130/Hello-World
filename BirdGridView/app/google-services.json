@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "315318345288",
+    "project_id": "birdgridview",
+    "storage_bucket": "birdgridview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315318345288:android:290721b4dc9169af17827d",
+        "android_client_info": {
+          "package_name": "com.example.birdgridview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315318345288-bag3uvi3krufr18f7tnl407eofbrcse0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcr9QdwXCXDH50Wy7xN2xIWBpUvOD11pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315318345288-bag3uvi3krufr18f7tnl407eofbrcse0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
