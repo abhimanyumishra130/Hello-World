@@ -48,6 +48,7 @@ class Balance_fragement : Fragment(R.layout.fragment_balance_fragement) {
                 expenseId.text = "0.0"
                 expense = 0.0
                 if (income == 0.0) totalId.text = "0.0"
+                else totalId.text = income.toString()
             }else{
                 expenseId.text = it.toString()
                 expense = it
@@ -74,6 +75,7 @@ class Balance_fragement : Fragment(R.layout.fragment_balance_fragement) {
                 incomeId.text = "0.0"
                 income = 0.0
                 if (expense == 0.0) totalId.text = "0.0"
+                else totalId.text = expense.toString()
             }else{
                 incomeId.text = it.toString()
                 income = it
