@@ -1,9 +1,12 @@
-package com.example.roomdatabasemoneymanagerapp
+package com.example.roomdatabasemoneymanagerapp.Fragments
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.roomdatabasemoneymanagerapp.Fragments.Balance_fragement
+import com.example.roomdatabasemoneymanagerapp.Fragments.Expense_Fragement
+import com.example.roomdatabasemoneymanagerapp.Fragments.Income_Fragement
 
 
 class PagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :

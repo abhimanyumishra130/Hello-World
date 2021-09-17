@@ -3,7 +3,7 @@ package com.example.roomdatabasemoneymanagerapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.roomdatabasemoneymanagerapp.R
+import com.example.roomdatabasemoneymanagerapp.Fragments.PagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -1,4 +1,4 @@
-package com.example.roomdatabasemoneymanagerapp
+package com.example.roomdatabasemoneymanagerapp.Fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidsqlitemoneymanagerappassignment.recyclerViewClass.OnExpenseClickListener
+import com.example.roomdatabasemoneymanagerapp.MVVM.Repository.MoneyRepo
+import com.example.roomdatabasemoneymanagerapp.MVVM.ViewModell.TaskViewModel
+import com.example.roomdatabasemoneymanagerapp.MVVM.ViewModell.TaskViewModelFactory
 import com.example.roomdatabasemoneymanagerapp.R
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.ExpenseAdapter
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.ExpenseTable
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.RoomDataBase
 import kotlinx.android.synthetic.main.fragment_expense__fragement.*
-import kotlinx.android.synthetic.main.fragment_income__fragement.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,22 +33,34 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
         private lateinit var  moneyAdapter: ExpenseAdapter
     }
 
-
+    lateinit var viewModel: TaskViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val roomDataBase = context?.let { RoomDataBase.getDatabaseObject(it) }
-        val taskExpenseDao = roomDataBase?.getExpenseDao()
+        val roomDatabase = context?.let { RoomDataBase.getDatabaseObject(it) }
+        val taskIncomeDao = roomDatabase?.getIncomeDao()
+        val taskExpenseDao = roomDatabase?.getExpenseDao()
+        val repo = taskExpenseDao?.let { MoneyRepo(taskIncomeDao!!, it) }
 
-        if (taskExpenseDao != null) {
-            taskExpenseDao.getData().observe(viewLifecycleOwner,
-                androidx.lifecycle.Observer {
-                    list.clear()
+        val viewModelFactory = repo?.let { TaskViewModelFactory(it) }
+
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(TaskViewModel::class.java)
+
+//        if (taskExpenseDao != null) {
+//            taskExpenseDao.getData().observe(viewLifecycleOwner,
+//                androidx.lifecycle.Observer {
+//                    list.clear()
+//                list.addAll(it)
+//                    moneyAdapter.notifyDataSetChanged()
+//            })
+//        }
+
+        viewModel.getAllExpense().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+                list.clear()
                 list.addAll(it)
-                    moneyAdapter.notifyDataSetChanged()
-            })
-        }
+                moneyAdapter.notifyDataSetChanged()
+        })
 
         val sdf = SimpleDateFormat("  yyyy-MM-dd")
         val currentDate = sdf.format(Date())
@@ -134,14 +149,16 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
         }
 
         submitAddExpense.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
+
                 val roomDataBase = context?.let { RoomDataBase.getDatabaseObject(it) }
                 val taskExpenseDao = roomDataBase?.getExpenseDao()
                 moneyModel.amount = amountAddExpense.text.toString().toDouble()
                 moneyModel.desc = descriptionAddExpense.text.toString()
                 moneyModel.date = dateAddExpense.text.toString()
-                taskExpenseDao?.updateData(moneyModel)
-            }
+//            CoroutineScope(Dispatchers.IO).launch {
+//                taskExpenseDao?.updateData(moneyModel)
+//            }
+            viewModel.updateExpense(moneyModel)
             expenseEditLayout.visibility = View.INVISIBLE
         }
 
@@ -151,8 +168,9 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
         Toast.makeText(context,"rohit maar khayega",Toast.LENGTH_SHORT).show()
         val roomDataBase = context?.let { RoomDataBase.getDatabaseObject(it) }
         val taskExpenseDao = roomDataBase?.getExpenseDao()
-        CoroutineScope(Dispatchers.IO).launch {
-            taskExpenseDao?.deleteData(moneyModel)
-        }
+//        CoroutineScope(Dispatchers.IO).launch {
+//            taskExpenseDao?.deleteData(moneyModel)
+//        }
+        viewModel.deleteExpense(moneyModel)
     }
 }

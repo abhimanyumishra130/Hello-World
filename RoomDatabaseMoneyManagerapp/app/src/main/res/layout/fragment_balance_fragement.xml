@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".Balance_fragement">
+    tools:context=".Fragments.Balance_fragement">
 
     <TextView
         android:text="Balance Sheet"

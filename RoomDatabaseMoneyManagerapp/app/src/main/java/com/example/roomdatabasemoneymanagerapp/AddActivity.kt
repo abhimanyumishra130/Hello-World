@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
+import com.example.roomdatabasemoneymanagerapp.MVVM.Repository.MoneyRepo
+import com.example.roomdatabasemoneymanagerapp.MVVM.ViewModell.TaskViewModel
+import com.example.roomdatabasemoneymanagerapp.MVVM.ViewModell.TaskViewModelFactory
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.*
 import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.coroutines.CoroutineScope
@@ -24,6 +28,7 @@ class AddActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
     lateinit var roomDataBase: RoomDataBase
     lateinit var taskIncomeDao: TaskIncomeDao
     lateinit var taskExpenseDao: TaskExpenseDao
+    lateinit var viewModel: TaskViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +41,9 @@ class AddActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
         taskIncomeDao = roomDataBase.getIncomeDao()
         taskExpenseDao = roomDataBase.getExpenseDao()
 
-
+        val repo = MoneyRepo(taskIncomeDao,taskExpenseDao)
+        val taskViewModelFactory = TaskViewModelFactory(repo)
+        viewModel = ViewModelProviders.of(this,taskViewModelFactory).get(TaskViewModel::class.java)
 
 
         onClick()
@@ -64,8 +71,8 @@ class AddActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
 
             CoroutineScope(Dispatchers.IO).launch {
                 when(tableName){
-                    "Income" -> taskIncomeDao.insertData(incomeTable)
-                    "Expense" -> taskExpenseDao.insertData(expenseTable)
+                    "Income" -> viewModel.insertIncome(incomeTable)
+                    "Expense" -> viewModel.insertExpense(expenseTable)
                 }
             }
 
