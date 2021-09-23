@@ -1,7 +1,9 @@
 package com.example.roomdatabasemoneymanagerapp.Fragments
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
@@ -18,6 +20,7 @@ import com.example.roomdatabasemoneymanagerapp.RoomDataBase.IncomeAdapter
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.IncomeTable
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.RoomDataBase
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.TaskIncomeDao
+import kotlinx.android.synthetic.main.edit_details.view.*
 import kotlinx.android.synthetic.main.fragment_income__fragement.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,11 +36,14 @@ class Income_Fragement : Fragment(R.layout.fragment_income__fragement),
     private var list = mutableListOf<IncomeTable>()
     private lateinit var moneyAdapter: IncomeAdapter
     lateinit var viewModel: TaskViewModel
+
+
     //lateinit var taskIncomeDao: TaskIncomeDao
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         val roomDatabase = context?.let { RoomDataBase.getDatabaseObject(it) }
         val taskIncomeDao = roomDatabase?.getIncomeDao()
@@ -63,26 +69,13 @@ class Income_Fragement : Fragment(R.layout.fragment_income__fragement),
                 moneyAdapter.notifyDataSetChanged()
         })
 
-        val sdf = SimpleDateFormat("  yyyy-MM-dd")
-        val currentDate = sdf.format(Date())
-        dateAddMain.text = currentDate
-
         moneyAdapter = IncomeAdapter(list, this)
         IncomeRecyclerView.adapter = moneyAdapter
         IncomeRecyclerView.layoutManager = LinearLayoutManager(context)
+
 //        updateUI()
 
-        dateAddMain.setOnClickListener {
-            val calendar: Calendar = Calendar.getInstance()
-            var dayy = calendar.get(Calendar.DAY_OF_MONTH)
-            var month = calendar.get(Calendar.MONTH)
-            var year = calendar.get(Calendar.YEAR)
-            val datePickerDialog =
-                context?.let { it1 -> DatePickerDialog(it1, this, year, month, dayy) }
-            if (datePickerDialog != null) {
-                datePickerDialog.show()
-            }
-        }
+
 
 
     }
@@ -134,29 +127,69 @@ class Income_Fragement : Fragment(R.layout.fragment_income__fragement),
 //        moneyAdapter.notifyDataSetChanged()
 //    }
 
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        dateAddMain.text = "  $year-${month + 1}-$dayOfMonth"
+    override fun onDateSet(vieww: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+//        dateAddMain?.text = "  $year-${month + 1}-$dayOfMonth"
     }
 
     override fun onIncomeEditClicked(moneyModel: IncomeTable, position: Int) {
         Toast.makeText(context, "rohit maar khayega", Toast.LENGTH_SHORT).show()
-        mainEditLayout.visibility = View.VISIBLE
+        val view = layoutInflater.inflate(R.layout.edit_details,null)
 
-        submitCancelIncome.setOnClickListener {
-            mainEditLayout.visibility = View.INVISIBLE
+        //set view to alert dialog
+        val alertDialog = AlertDialog.Builder(context).create()
+        alertDialog.setCancelable(false)
+        alertDialog.setView(view)
+        alertDialog.show()
+//        view.mainEditLayout.visibility = View.VISIBLE
+// date code
+        val sdf = SimpleDateFormat("  yyyy-MM-dd")
+        val currentDate = sdf.format(Date())
+        view?.dateAddMain?.text = currentDate
+
+
+
+        //date picker
+        view.dateAddMain.setOnClickListener {
+            val cal = Calendar.getInstance()
+
+            val dateSetListener =
+                DatePickerDialog.OnDateSetListener { anotherView, year, monthOfYear, dayOfMonth ->
+                    cal.set(Calendar.YEAR, year)
+                    cal.set(Calendar.MONTH, monthOfYear)
+                    cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                    val myFormat = "yyyy-MM-dd" // mention the format you need
+                    val sdf = SimpleDateFormat(myFormat, Locale.US)
+                    view.dateAddMain.text = sdf.format(cal.time)
+                }
+
+            DatePickerDialog(
+                view.context,
+                dateSetListener,
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH)
+            ).show()
+
         }
-        submitAddIncome.setOnClickListener {
+
+//        view?.dateAddMain?.text = sdf.format(calendar.time)
+        view.submitCancelIncome.setOnClickListener {
+           alertDialog.cancel()
+        }
+        view.submitAddIncome.setOnClickListener {
 
                 val roomDatabase = context?.let { RoomDataBase.getDatabaseObject(it) }
                 val taskIncomeDao = roomDatabase?.getIncomeDao()
-                moneyModel.amount = amountAddMain.text.toString().toDouble()
-                moneyModel.desc = descriptionAddMain.text.toString()
-                moneyModel.date = dateAddMain.text.toString()
+                moneyModel.amount = view.amountAddMain.text.toString().toDouble()
+                moneyModel.desc = view.descriptionAddMain.text.toString()
+                moneyModel.date = view.dateAddMain.text.toString()
 //            CoroutineScope(Dispatchers.IO).launch {
 //                taskIncomeDao?.updateData(moneyModel)
 //            }
             viewModel.updateIncome(moneyModel)
-            mainEditLayout.visibility = View.INVISIBLE
+            alertDialog.cancel()
+//            mainEditLayout.visibility = View.INVISIBLE
         }
 
     }

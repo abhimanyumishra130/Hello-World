@@ -1,5 +1,6 @@
 package com.example.roomdatabasemoneymanagerapp.Fragments
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ import com.example.roomdatabasemoneymanagerapp.R
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.ExpenseAdapter
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.ExpenseTable
 import com.example.roomdatabasemoneymanagerapp.RoomDataBase.RoomDataBase
+import kotlinx.android.synthetic.main.edit_details.view.*
 import kotlinx.android.synthetic.main.fragment_expense__fragement.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -62,9 +64,6 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
                 moneyAdapter.notifyDataSetChanged()
         })
 
-        val sdf = SimpleDateFormat("  yyyy-MM-dd")
-        val currentDate = sdf.format(Date())
-        dateAddExpense.text = currentDate
 
         moneyAdapter = ExpenseAdapter(list,this)
         ExpenseRecyclerView.adapter = moneyAdapter
@@ -76,17 +75,6 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
 
 
 
-        dateAddExpense.setOnClickListener {
-            val calendar: Calendar = Calendar.getInstance()
-            var dayy = calendar.get(Calendar.DAY_OF_MONTH)
-            var month = calendar.get(Calendar.MONTH)
-            var year = calendar.get(Calendar.YEAR)
-            val datePickerDialog =
-                context?.let { it1 -> DatePickerDialog(it1, this, year,month,dayy) }
-            if (datePickerDialog != null) {
-                datePickerDialog.show()
-            }
-        }
     }
 
 //    override fun onEditClicked(moneyModel: MoneyModel, position: Int) {
@@ -137,29 +125,68 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
 //    }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        dateAddExpense.text = "  $year-${month+1}-$dayOfMonth"
+
     }
 
     override fun onExpenseEditClicked(moneyModel: ExpenseTable, position: Int) {
         Toast.makeText(context,"rohit maar khayega",Toast.LENGTH_SHORT).show()
-        expenseEditLayout.visibility = View.VISIBLE
+        val view = layoutInflater.inflate(R.layout.edit_details,null)
 
-        submitCancelExpense.setOnClickListener {
-            expenseEditLayout.visibility = View.INVISIBLE
+        //set view to alert dialog
+        val alertDialog = AlertDialog.Builder(context).create()
+        alertDialog.setCancelable(false)
+        alertDialog.setView(view)
+        alertDialog.show()
+//        view.mainEditLayout.visibility = View.VISIBLE
+// date code
+        val sdf = SimpleDateFormat("  yyyy-MM-dd")
+        val currentDate = sdf.format(Date())
+        view?.dateAddMain?.text = currentDate
+
+
+
+        //date picker
+        view.dateAddMain.setOnClickListener {
+            val cal = Calendar.getInstance()
+
+            val dateSetListener =
+                DatePickerDialog.OnDateSetListener { anotherView, year, monthOfYear, dayOfMonth ->
+                    cal.set(Calendar.YEAR, year)
+                    cal.set(Calendar.MONTH, monthOfYear)
+                    cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                    val myFormat = "yyyy-MM-dd" // mention the format you need
+                    val sdf = SimpleDateFormat(myFormat, Locale.US)
+                    view.dateAddMain.text = sdf.format(cal.time)
+                }
+
+            DatePickerDialog(
+                view.context,
+                dateSetListener,
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH)
+            ).show()
+
         }
 
-        submitAddExpense.setOnClickListener {
+        view.submitCancelIncome.setOnClickListener {
+            alertDialog.cancel()
+        }
 
-                val roomDataBase = context?.let { RoomDataBase.getDatabaseObject(it) }
-                val taskExpenseDao = roomDataBase?.getExpenseDao()
-                moneyModel.amount = amountAddExpense.text.toString().toDouble()
-                moneyModel.desc = descriptionAddExpense.text.toString()
-                moneyModel.date = dateAddExpense.text.toString()
+        view.submitAddIncome.setOnClickListener {
+
+            val roomDatabase = context?.let { RoomDataBase.getDatabaseObject(it) }
+            val taskIncomeDao = roomDatabase?.getIncomeDao()
+            moneyModel.amount = view.amountAddMain.text.toString().toDouble()
+            moneyModel.desc = view.descriptionAddMain.text.toString()
+            moneyModel.date = view.dateAddMain.text.toString()
 //            CoroutineScope(Dispatchers.IO).launch {
-//                taskExpenseDao?.updateData(moneyModel)
+//                taskIncomeDao?.updateData(moneyModel)
 //            }
             viewModel.updateExpense(moneyModel)
-            expenseEditLayout.visibility = View.INVISIBLE
+            alertDialog.cancel()
+//            mainEditLayout.visibility = View.INVISIBLE
         }
 
     }
