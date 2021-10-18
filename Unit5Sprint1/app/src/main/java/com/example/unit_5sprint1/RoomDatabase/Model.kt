@@ -7,9 +7,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "actors")
 class Model(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id : Int,
     @ColumnInfo(name = "name")
     var name :String,
     @ColumnInfo(name = "birthday")
@@ -24,4 +21,8 @@ class Model(
     var countryCode:String,
     @ColumnInfo(name = "country time-zone")
     var timeZone:String
-)
+){
+   @PrimaryKey(autoGenerate = true)
+   @ColumnInfo(name = "id")
+   var id:Int?=null
+}

@@ -22,7 +22,7 @@ class Repository(var itemDao: ItemDao) {
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
                 if(response.body()!=null){
                     response.body()?.forEach {
-                        var response = Model(it.id,it.name,it.birthday,it.deathday,it.image.medium,it.country.name,it.country.code,it.country.timezone)
+                        var response = Model(it.name,it.birthday,it.deathday,it.image.medium,it.country.name,it.country.code,it.country.timezone)
                         itemDao.insertData(response)
                     }
 

@@ -3,24 +3,17 @@ package com.example.unit_5sprint1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.unit_5sprint1.MVVM.Repository
 import com.example.unit_5sprint1.MVVM.ViewModel
+import com.example.unit_5sprint1.MVVM.ViewModelFactory
+import com.example.unit_5sprint1.MVVM.ViewModell
 import com.example.unit_5sprint1.RoomDatabase.ActorRoomDataBase
 import com.example.unit_5sprint1.RoomDatabase.ItemDao
 import com.example.unit_5sprint1.RoomDatabase.Model
 import com.example.unit_5sprint1.recyclerView.ItemAdapter
-import com.example.unit_5sprint1.retrofit.ApiClient
-import com.example.unit_5sprint1.retrofit.Network
-import com.example.unit_5sprint1.retrofit.ResponseModel
-import com.example.unit_5sprint1.retrofit.ResponseModelItem
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private var list = arrayListOf<Model>()
@@ -28,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var roomDataBase: ActorRoomDataBase
     lateinit var itemDao: ItemDao
-    lateinit var viewModel: ViewModel
+    lateinit var viewModel: ViewModell
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         itemDao = roomDataBase.getDao()
 
         val repository = Repository(itemDao)
-        viewModel = ViewModel(repository)
+        val viewModelFactory = ViewModelFactory(repository)
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModell::class.java)
 
         viewModel.insertData()
         viewModel.getAllData().observe(this, Observer {
