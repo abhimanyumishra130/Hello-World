@@ -16,7 +16,7 @@ abstract class ActorRoomDataBase: RoomDatabase() {
                 val obj = Room.databaseBuilder(
                     context.applicationContext,
                     ActorRoomDataBase::class.java,
-                    "actors"
+                    "actors1"
                 )
 
                 obj.fallbackToDestructiveMigration()

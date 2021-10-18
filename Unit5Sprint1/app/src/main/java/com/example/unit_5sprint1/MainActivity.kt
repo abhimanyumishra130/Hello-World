@@ -6,7 +6,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.unit_5sprint1.MVVM.Repository
-import com.example.unit_5sprint1.MVVM.ViewModel
 import com.example.unit_5sprint1.MVVM.ViewModelFactory
 import com.example.unit_5sprint1.MVVM.ViewModell
 import com.example.unit_5sprint1.RoomDatabase.ActorRoomDataBase
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(repository)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModell::class.java)
 
-        viewModel.insertData()
+//        viewModel.insertData()
         viewModel.getAllData().observe(this, Observer {
             list.addAll(it)
         })
