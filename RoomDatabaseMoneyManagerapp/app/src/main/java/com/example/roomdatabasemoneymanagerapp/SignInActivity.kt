@@ -59,7 +59,7 @@ class SignInActivity : AppCompatActivity() {
                         }
                         Status.ERROR->{
                             val error = response.message!!
-                            longToast("error = $error ")
+                            longToast("Invalid email and password")
                         }
                         Status.LOADING->{
 
