@@ -6,11 +6,14 @@ import com.example.unit_5sprint1.RoomDatabase.Model
 import com.example.unit_5sprint1.retrofit.ResponseModelItem
 
 class ViewModell(val repository: Repository) :ViewModel(){
-    fun getAllData():LiveData<ArrayList<Model>>{
+    fun getAllData():LiveData<List<Model>>{
         return repository.getData()
     }
 
-    fun insertData(){
-        repository.insertData()
+    fun insertData( num:Int){
+        repository.insertData(num)
+    }
+    fun deleteAllData(){
+        repository.deleteAll()
     }
 }

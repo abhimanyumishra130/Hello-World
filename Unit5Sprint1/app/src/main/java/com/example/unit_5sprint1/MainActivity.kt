@@ -33,9 +33,15 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(repository)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModell::class.java)
 
-//        viewModel.insertData()
+        fetchData.setOnClickListener {
+            viewModel.deleteAllData()
+            viewModel.insertData(numberPage.text.toString().toInt())
+        }
+
         viewModel.getAllData().observe(this, Observer {
+            list.clear()
             list.addAll(it)
+            itemAdapter.notifyDataSetChanged()
         })
 //        var viewModel =  ViewModel(Repository())
 //        list.addAll(viewModel.getAllData())
