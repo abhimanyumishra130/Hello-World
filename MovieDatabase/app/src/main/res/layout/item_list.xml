@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="result"
+            type="com.example.moviedatabase.remote.Result" />
+    </data>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageItem"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/titleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="title:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/titleItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/titleName"
+                    android:text="@{result.title}"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/overViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleItem"
+                    android:text="overview:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/overViewItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleItem"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/overViewName"
+                    android:maxLines="2"
+                    android:text="@{result.overview}"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
