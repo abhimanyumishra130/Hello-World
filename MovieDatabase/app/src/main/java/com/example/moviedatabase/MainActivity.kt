@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    
 
     fun setAdapter(){
         itemAdapter = ItemAdapter()
