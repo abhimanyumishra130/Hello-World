@@ -46,11 +46,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//            binding.apply {
-                    //list.clear()
-//                    list.addAll(response)
-//
-//            }
 
 
     }
