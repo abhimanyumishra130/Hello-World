@@ -29,6 +29,9 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        backToLogin.setOnClickListener {
+            finish()
+        }
 
         roomDB = RoomDataBase.getDatabaseObject(this)
         taskIncomeDao = roomDB.getIncomeDao()
@@ -54,9 +57,9 @@ class SignUpActivity : AppCompatActivity() {
 
                     when(response.status){
                         Status.SUCCESS->{
-//                            val name = response.data?.user?.name!!
-//                            val email = response.data?.user?.email!!
-//                            longToast("$name and $email")
+                            val name = response.data?.user?.name!!
+                            val email = response.data?.user?.email!!
+                            longToast("$name and $email")
                             val intent = Intent(this,SignInActivity::class.java)
                             startActivity(intent)
                         }

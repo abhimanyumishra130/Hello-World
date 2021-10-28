@@ -1,5 +1,6 @@
 package com.example.roomdatabasemoneymanagerapp.RoomDataBase
 
+import android.graphics.Color
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsqlitemoneymanagerappassignment.recyclerViewClass.OnExpenseClickListener
@@ -9,7 +10,8 @@ import kotlinx.android.synthetic.main.item_layout.view.*
 class IncomeViewHolder(itemView: View, var onClickListener: OnIncomeClickListener) : RecyclerView.ViewHolder(itemView) {
     fun setIncomeData(incomeTable: IncomeTable){
         itemView?.apply {
-            Amount.text = incomeTable.amount.toString()
+            Amount.setTextColor(Color.parseColor("#008000"))
+            Amount.text = "+₹ ${incomeTable.amount}"
             Description.text = incomeTable.desc
             Date.text = incomeTable.date
 
@@ -27,7 +29,9 @@ class IncomeViewHolder(itemView: View, var onClickListener: OnIncomeClickListene
 class ExpenseViewHolder(itemView: View, var onClickListener: OnExpenseClickListener) : RecyclerView.ViewHolder(itemView) {
     fun setExpenseData(expenseTable: ExpenseTable){
         itemView?.apply {
-            Amount.text = expenseTable.amount.toString()
+            Amount.setTextColor(Color.parseColor("#FF0000"))
+            Amount.text = "-₹ ${expenseTable.amount}"
+
             Description.text = expenseTable.desc
             Date.text = expenseTable.date
 

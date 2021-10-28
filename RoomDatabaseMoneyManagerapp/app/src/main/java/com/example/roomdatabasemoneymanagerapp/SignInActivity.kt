@@ -1,8 +1,10 @@
 package com.example.roomdatabasemoneymanagerapp
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.roomdatabasemoneymanagerapp.MVVM.Repository.MoneyRepo
@@ -26,6 +28,28 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        emailSignIn.doAfterTextChanged {
+            if(passwordSignIn.text.toString().length>=6 && emailSignIn.text.toString().length>0) {
+//                signInBtn.supportBackgroundTintList
+                signInBtn.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
+            } else {
+                signInBtn.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.grey))
+            }
+        }
+        passwordSignIn.doAfterTextChanged {
+            if(passwordSignIn.text.toString().length>=6 && emailSignIn.text.toString().length>0) {
+//                signInBtn.supportBackgroundTintList
+                signInBtn.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
+            } else {
+                signInBtn.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.grey))
+            }
+        }
+
+//        emailSignIn.doAfterTextChanged {
+//            text.text = emailSignIn.text.toString()
+//        }
+
 
         roomDB = RoomDataBase.getDatabaseObject(this)
         taskIncomeDao = roomDB.getIncomeDao()
@@ -51,9 +75,9 @@ class SignInActivity : AppCompatActivity() {
 
                     when(response.status){
                         Status.SUCCESS->{
-//                            val name = response.data?.user?.name!!
-//                            val email = response.data?.user?.email!!
-//                            longToast("$name and $email")
+                            val name = response.data?.user?.name!!
+                            val email = response.data?.user?.email!!
+                            longToast("$name and $email")
                             val intent = Intent(this,MainActivity::class.java)
                             startActivity(intent)
                         }

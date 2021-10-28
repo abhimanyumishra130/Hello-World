@@ -129,7 +129,6 @@ class Expense_Fragement : Fragment(R.layout.fragment_expense__fragement),
     }
 
     override fun onExpenseEditClicked(moneyModel: ExpenseTable, position: Int) {
-        Toast.makeText(context,"rohit maar khayega",Toast.LENGTH_SHORT).show()
         val view = layoutInflater.inflate(R.layout.edit_details,null)
 
         //set view to alert dialog
