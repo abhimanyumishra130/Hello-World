@@ -7,7 +7,7 @@ import com.example.w45_codingevalutation.Data.remote.Article
 import com.example.w45_codingevalutation.Data.remote.ResponseModel
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class VeiwHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class VeiwHolder(itemView: View, val itemClickListener: ItemClickListener): RecyclerView.ViewHolder(itemView) {
 
     fun getData(article: Article){
         itemView?.apply {
@@ -15,6 +15,9 @@ class VeiwHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
             titleItem.text = article.title
             dateItem.text = article.publishedAt
             descItem.text = article.description
+            item.setOnClickListener {
+                itemClickListener.onItemClicked(article)
+            }
         }
     }
 }
