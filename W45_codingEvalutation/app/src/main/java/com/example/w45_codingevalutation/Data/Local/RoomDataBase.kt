@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.w45_codingevalutation.Data.remote.Article
 
-@Database(entities = [Article::class],version = 1)
+@Database(entities = [ArticleDatabase::class],version = 1)
 abstract class RoomDataBase : RoomDatabase() {
 
     abstract fun getDao():RoomDao

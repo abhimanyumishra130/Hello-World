@@ -6,6 +6,35 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_toStartOf="@+id/searchButton"
+            android:id="@+id/searchItem"
+            android:layout_margin="15dp"
+            android:hint="search news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/searchButton"
+            android:layout_alignParentEnd="true"
+            android:text="search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/sortData"
+        android:text="sort By Date"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="15dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
