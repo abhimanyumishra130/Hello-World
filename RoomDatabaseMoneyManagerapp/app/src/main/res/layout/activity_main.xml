@@ -78,6 +78,7 @@
             android:layout_height="wrap_content"
             app:tabGravity="fill"
             app:tabMode="fixed"
+
             app:tabTextColor="@color/black" />
 
         <androidx.viewpager2.widget.ViewPager2

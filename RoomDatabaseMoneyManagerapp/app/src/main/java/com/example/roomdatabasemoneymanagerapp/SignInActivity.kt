@@ -46,10 +46,6 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-//        emailSignIn.doAfterTextChanged {
-//            text.text = emailSignIn.text.toString()
-//        }
-
 
         roomDB = RoomDataBase.getDatabaseObject(this)
         taskIncomeDao = roomDB.getIncomeDao()
@@ -58,10 +54,6 @@ class SignInActivity : AppCompatActivity() {
 
         val taskViewModelFactory = TaskViewModelFactory(repo)
         taskViewModel = ViewModelProviders.of(this,taskViewModelFactory).get(TaskViewModel::class.java)
-
-
-//        val loginRequestModel = LoginRequestModel( userName =
-////            "pradeep1706108@gmail.com",password = "dhankhar")
 
 
         signInBtn.setOnClickListener {
