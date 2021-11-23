@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
+class AddActivity : AppCompatActivity() ,DatePickerDialog.OnDateSetListener{
     var dayy:Int = 0
     var month: Int = 0
     var year: Int = 0
