@@ -2,6 +2,7 @@ package com.example.androidshorttake_awayassignment_i
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProviders
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: SearchAdapter
     private var list = emptyList<Address>()
-   lateinit var  viewModel:SearchViewModel
+    val viewModel:SearchViewModel by viewModels()
 
 //    val viewModel:SearchViewModel by viewModel
     private lateinit var binding: ActivityMainBinding
@@ -30,10 +31,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val repo = Repo()
-
-        val viewModelFactory = ViewModelFactory(repo)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(SearchViewModel::class.java)
+//        val repo = Repo()
+//
+//        val viewModelFactory = ViewModelFactory(repo)
+//        viewModel = ViewModelProviders.of(this, viewModelFactory).get(SearchViewModel::class.java)
 
         binding.etSearch.doAfterTextChanged {
             if(binding.etSearch.text.toString().length > 0){

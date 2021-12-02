@@ -4,6 +4,7 @@ import com.application.searchapi.data.Resource
 import com.application.searchapi.data.ResponseHandler
 import com.example.androidshorttake_awayassignment_i.data.model.Address
 import com.example.androidshorttake_awayassignment_i.data.model.ResponseModel
+import com.example.androidshorttake_awayassignment_i.di.hilt.SearchModule
 import com.example.androidshorttake_awayassignment_i.utils.ApiClient
 import com.example.androidshorttake_awayassignment_i.utils.Network
 import kotlinx.coroutines.CoroutineScope
@@ -18,7 +19,7 @@ class Repo @Inject constructor() {
 
      suspend fun getAddressList(city:String):Resource<ResponseModel>{
       return try{
-          val response = Network.getApiService().getAddresses(city)
+          val response = SearchModule.getInstance().create(ApiClient::class.java).getAddresses(city)
           responshandler.handleSuccess(response)
       }catch (e:Exception){
           responshandler.handleException(e)
