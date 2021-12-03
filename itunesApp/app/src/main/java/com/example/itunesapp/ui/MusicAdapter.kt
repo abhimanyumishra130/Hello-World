@@ -29,5 +29,6 @@ class MusicViewHolder(val musicItemLayoutBinding: MusicItemLayoutBinding):Recycl
     fun setData(result: MusicTable){
         musicItemLayoutBinding.result = result
         Glide.with(musicItemLayoutBinding.imgItem).load(result.artworkUrl30).into(musicItemLayoutBinding.imgItem)
+
     }
 }
