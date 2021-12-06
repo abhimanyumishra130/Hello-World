@@ -20,7 +20,7 @@ class PagingSourceItem : PagingSource<Int, Result>() {
         val pageNumber =  params.key ?: 1
         val response = api.getData(api_key)
         val list = response.results
-
+//val list = arrayListOf<Result>()
         return try {
             LoadResult.Page(
                 data = list,
