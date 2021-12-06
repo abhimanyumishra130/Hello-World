@@ -12,6 +12,7 @@
         android:layout_margin="10dp"
         app:cardCornerRadius="15dp">
         <RelativeLayout
+            android:padding="10dp"
             android:id="@+id/rlContactItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -20,7 +21,6 @@
                 android:text="@{contact.name}"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <TextView
@@ -29,7 +29,6 @@
                 android:text="@{contact.phoneNumber}"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
