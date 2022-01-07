@@ -1,4 +1,4 @@
-package com.example.moviedatabase.remote
+package com.example.moviedatabase.utils
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -14,5 +14,5 @@ object NetworkHelper {
             .build()
     }
 
-    fun getApi():ApiClient= getInstance().create(ApiClient::class.java)
+    fun getApi(): ApiClient = getInstance().create(ApiClient::class.java)
 }

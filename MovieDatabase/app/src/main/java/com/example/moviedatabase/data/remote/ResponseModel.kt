@@ -1,4 +1,4 @@
-package com.example.moviedatabase.remote
+package com.example.moviedatabase.data.remote
 
 data class ResponseModel(
     val page: Int,

@@ -1,4 +1,6 @@
-package com.example.moviedatabase.remote
+package com.example.moviedatabase.data.remote
+
+import java.io.Serializable
 
 data class Result(
     val adult: Boolean,
@@ -15,4 +17,4 @@ data class Result(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int
-)
+):Serializable

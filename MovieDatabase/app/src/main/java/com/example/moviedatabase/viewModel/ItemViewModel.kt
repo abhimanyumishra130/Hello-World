@@ -1,6 +1,7 @@
-package com.example.moviedatabase.MVVM
+package com.example.moviedatabase.viewModel
 
 import androidx.lifecycle.ViewModel
+import com.example.moviedatabase.repository.Repository
 
 class ItemViewModel : ViewModel() {
 

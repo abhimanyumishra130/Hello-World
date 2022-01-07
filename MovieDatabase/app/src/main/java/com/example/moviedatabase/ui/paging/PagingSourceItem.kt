@@ -1,9 +1,9 @@
-package com.example.moviedatabase.recyclerView.paging
+package com.example.moviedatabase.ui.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.moviedatabase.remote.NetworkHelper
-import com.example.moviedatabase.remote.Result
+import com.example.moviedatabase.utils.NetworkHelper
+import com.example.moviedatabase.data.remote.Result
 import java.lang.Exception
 
 class PagingSourceItem : PagingSource<Int, Result>() {

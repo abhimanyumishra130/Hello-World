@@ -27,6 +27,8 @@ class IncomeViewHolder(itemView: View, var onClickListener: OnIncomeClickListene
 }
 
 class ExpenseViewHolder(itemView: View, var onClickListener: OnExpenseClickListener) : RecyclerView.ViewHolder(itemView) {
+
+
     fun setExpenseData(expenseTable: ExpenseTable){
         itemView?.apply {
             Amount.setTextColor(Color.parseColor("#FF0000"))
@@ -46,3 +48,6 @@ class ExpenseViewHolder(itemView: View, var onClickListener: OnExpenseClickListe
     }
 
 }
+
+
+
